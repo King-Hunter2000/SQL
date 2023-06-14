@@ -1,0 +1,40 @@
+-- Design a store database
+
+CREATE TABLE SportsEquiptment ( id INTEGER PRIMARY KEY, equiptment TEXT, purpose TEXT, color TEXT, price INTEGER ); 
+
+INSERT INTO sportsequiptment VALUES (1,  "shinguards", "to protect shins", "White", 15.99);
+
+INSERT INTO sportsequiptment VALUES (2, "Helmet", "To help prevent consussions or other head injuries", "Red", 99.99);
+
+INSERT INTO sportsequiptment VALUES (3, "Shoulder pads", "To help protect against shoulder injuries", "Black", 57.99);
+
+INSERT INTO sportsequiptment VALUES (4, "Thigh and Knee pad (set)", "To help prevent injuries from the waist down", "Black", 74.89);
+
+INSERT INTO sportsequiptment VALUES (5, "Mouth Guard", "To prevent mouth/tooth injury", "Clear", 10.99);
+
+INSERT INTO sportsequiptment VALUES (6, "Kicking Tee", "Holds ball in place during kick-off", "Orange", 5.99);
+
+INSERT INTO sportsequiptment VALUES (7, "Cleats", "To protect feet, and to give better traction on playing field", "Black", 65.99);
+
+INSERT INTO sportsequiptment VALUES (8, "Bat Tape", "For better bat grip", "White", 8.99);
+
+INSERT INTO sportsequiptment VALUES (9, "Weighted Vest", "To increase indurance", "Black", 33.99);
+
+INSERT INTO sportsequiptment VALUES (10, "Equiptment Bag", "To store and carry all of your equiptment", "Blue", 25.99);
+
+INSERT INTO sportsequiptment VALUES (11, "Practice Nets", "Small nets for accuracy training", "White", 49.99);
+
+INSERT INTO sportsequiptment VALUES (12, "Weighted balls", "To increase shooting power","Yellow", 27.89);
+
+INSERT INTO sportsequiptment VALUES (13, "Velcro Ankle Weights", "To increase leg strength", "Black", 28.72);
+
+INSERT INTO sportsequiptment VALUES (14, "Gloves", "To give better grip on equiptment or balls", "Silver", 15.99);
+
+INSERT INTO sportsequiptment VALUES (15, "Cones (set of 10)", "Practice Drills", "Orange", 32.99);
+
+-- Display most expensive item in store
+SELECT MAX(price) FROM sportsequiptment;
+
+-- List items over 15.99 in order from least to greatest
+SELECT * FROM sportsequiptment WHERE price > 15.99 ORDER BY price asc;
+
