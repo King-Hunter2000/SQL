@@ -1,0 +1,60 @@
+CREATE TABLE singers (id INTEGER PRIMARY KEY AUTOINCREMENT, fullname TEXT, age INTEGER);
+
+INSERT INTO singers (fullname, age) VALUES
+("Morgan Wallen", "30");
+INSERT INTO singers (fullname, age) VALUES
+("Luke Combs", "33");
+INSERT INTO singers (fullname, age) VALUES
+("Colter Wall", "27");
+INSERT INTO singers (fullname, age) VALUES
+("Blackbear", "32");
+INSERT INTO singers (fullname, age) VALUES
+("Post Malone", "27");
+INSERT INTO singers (fullname, age) VALUES
+("Jennifer Lopez", "53");
+INSERT INTO singers (fullname, age) VALUES
+("Ed Sheeran", "32");
+INSERT INTO singers (fullname, age) VALUES
+("Bruno Mars", "37");
+INSERT INTO singers (fullname, age) VALUES
+("Michael Buble", "47");
+INSERT INTO singers (fullname, age) VALUES
+("Shawn Mendes", "24");
+
+CREATE TABLE hobbies (id INTEGER PRIMARY KEY AUTOINCREMENT, singer_id INTEGER, name TEXT);
+
+INSERT INTO hobbies (singer_id, name) 
+VALUES (1, "performing");
+INSERT INTO hobbies (singer_id, name) 
+VALUES (2, "songwritting");
+INSERT INTO hobbies (singer_id, name) 
+VALUES (1, "touring");
+INSERT INTO hobbies (singer_id, name)
+VALUES (3, "recording");
+INSERT INTO hobbies (singer_id, name) 
+VALUES (4, "singing");
+INSERT INTO hobbies (singer_id, name)
+VALUES (2, "videos");
+INSERT INTO hobbies (singer_id, name)
+VALUES (3, "performing");
+INSERT INTO hobbies (singer_id, name)
+VALUES (4, "touring");
+
+CREATE TABLE famous_friends (id INTEGER PRIMARY KEY AUTOINCREMENT, singer1_id INTEGER, singer2_id INTEGER);
+
+INSERT INTO famous_friends (singer1_id, singer2_id)
+            VALUES (1,3);
+
+INSERT INTO famous_friends (singer1_id, singer2_id)
+            VALUES (2,4);
+
+-- joining two tables to show name and hobby
+
+SELECT singers.fullname,hobbies.name AS hobby
+FROM singers
+JOIN hobbies
+ON singers.id=hobbies.singer_id;
+
+-- showing name and age
+
+SELECT * FROM singers;
